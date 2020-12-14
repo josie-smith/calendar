@@ -158,24 +158,26 @@ def create_events(year):
     # initialise events
     global event
     event = {}
+    end = r"}\\[-5mm] \normalsize{"
     for month in range(1, 13):
         for day in range(1, 32):
-            event[(day,month)] = r"}\\[-5mm] \normalsize{"
+            event[(day,month)] = end
 
-    event[(1,1)] += r"New Year's Day}\\[-5mm] \normalsize{"
-    event[(2,1)] += r"Day After New Year's Day}\\[-5mm] \normalsize{"
-    event[(6,2)] += r"Waitangi Day}\\[-5mm] \normalsize{"
-    event[(mothers_day(year).day, mothers_day(year).month)] += r"UK Mother's Day}\\[-5mm] \normalsize{"
-    event[(easter(year).day-2, easter(year).month)] += r"Good Friday}\\[-5mm] \normalsize{"
-    event[(easter(year).day, easter(year).month)] += r"Easter Sunday}\\[-5mm] \normalsize{"
-    event[(easter(year).day+1, easter(year).month)] += r"Easter Monday}\\[-5mm] \normalsize{"
-    event[(25,4)] += r"ANZAC Day}\\[-5mm] \normalsize{"
-    event[(nth_day(1, 1, year, 6),6)] += r"Queen's Birthday}\\[-5mm] \normalsize{"
-    event[(nth_day(3, 7, year, 6),6)] += r"UK Father's Day}\\[-5mm] \normalsize{"
-    event[(nth_day(2, 3, year, 10),10)] += r"Labour Day}\\[-5mm] \normalsize{"
-    event[(nth_day(2, 5, year, 11, 2),11)] += r"North Canterbury}\\[-5mm] \normalsize{Anniversary Day}\\[-5mm] \normalsize{"
-    event[(25,12)] += r"Christmas Day}\\[-5mm] \normalsize{"
-    event[(26,12)] += r"Boxing Day}\\[-5mm] \normalsize{"
+
+    event[(1,1)] += "New Year's Day" + end
+    event[(2,1)] += "Day After New Year's Day" + end
+    event[(6,2)] += "Waitangi Day" + end
+    event[(mothers_day(year).day, mothers_day(year).month)] += "UK Mother's Day" + end
+    event[(easter(year).day-2, easter(year).month)] += "Good Friday" + end
+    event[(easter(year).day, easter(year).month)] += "Easter Sunday" + end
+    event[(easter(year).day+1, easter(year).month)] += "Easter Monday" + end
+    event[(25,4)] += "ANZAC Day" + end
+    event[(nth_day(1, 1, year, 6),6)] += "Queen's Birthday" + end
+    event[(nth_day(3, 7, year, 6),6)] += "UK Father's Day" + end
+    event[(nth_day(2, 3, year, 10),10)] += "Labour Day" + end
+    event[(nth_day(2, 5, year, 11, 2),11)] += "North Canterbury" + end + "Anniversary Day" + end
+    event[(25,12)] += "Christmas Day" + end
+    event[(26,12)] += "Boxing Day" + end
 
     # Add you own custom events here
 
