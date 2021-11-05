@@ -174,7 +174,7 @@ def create_events(year):
     event[(25,4)] += "ANZAC Day" + end
     event[(nth_day(1, 1, year, 6),6)] += "Queen's Birthday" + end
     event[(nth_day(3, 7, year, 6),6)] += "UK Father's Day" + end
-    event[(nth_day(2, 3, year, 10),10)] += "Labour Day" + end
+    event[(nth_day(4, 1, year, 10),10)] += "Labour Day" + end
     event[(nth_day(2, 5, year, 11, 2),11)] += "North Canterbury" + end + "Anniversary Day" + end
     event[(25,12)] += "Christmas Day" + end
     event[(26,12)] += "Boxing Day" + end
