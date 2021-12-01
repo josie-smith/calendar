@@ -164,20 +164,21 @@ def create_events(year):
             event[(day,month)] = end
 
 
-    event[(1,1)] += "New Year's Day" + end
-    event[(2,1)] += "Day After New Year's Day" + end
-    event[(6,2)] += "Waitangi Day" + end
+    event[(1,1)]                            += "New Year's Day" + end
+    event[(2,1)]                            += "Day After New Year's Day" + end
+    event[(6,2)]                            += "Waitangi Day" + end
     event[(mothers_day(year).day, mothers_day(year).month)] += "UK Mother's Day" + end
-    event[(easter(year).day-2, easter(year).month)] += "Good Friday" + end
-    event[(easter(year).day, easter(year).month)] += "Easter Sunday" + end
-    event[(easter(year).day+1, easter(year).month)] += "Easter Monday" + end
-    event[(25,4)] += "ANZAC Day" + end
-    event[(nth_day(1, 1, year, 6),6)] += "Queen's Birthday" + end
-    event[(nth_day(3, 7, year, 6),6)] += "UK Father's Day" + end
-    event[(nth_day(4, 1, year, 10),10)] += "Labour Day" + end
-    event[(nth_day(2, 5, year, 11, 2),11)] += "North Canterbury" + end + "Anniversary Day" + end
-    event[(25,12)] += "Christmas Day" + end
-    event[(26,12)] += "Boxing Day" + end
+    event[(easter(year).day-2, easter(year).month)]         += "Good Friday" + end
+    event[(easter(year).day, easter(year).month)]           += "Easter Sunday" + end
+    event[(easter(year).day+1, easter(year).month)]         += "Easter Monday" + end
+    event[(25,4)]                           += "ANZAC Day" + end
+    event[(nth_day(1, 1, year, 6),6)]       += "Queen's Birthday" + end
+    event[(nth_day(3, 7, year, 6),6)]       += "UK Father's Day" + end
+    event[(24,6)]                           += "Matariki" + end         # Change this date manually every year
+    event[(nth_day(4, 1, year, 10),10)]     += "Labour Day" + end
+    event[(nth_day(2, 5, year, 11, 2),11)]  += "Canterbury" + end + "Anniversary Day" + end
+    event[(25,12)]                          += "Christmas Day" + end
+    event[(26,12)]                          += "Boxing Day" + end
 
     # Add you own custom events here
 
@@ -199,4 +200,4 @@ def long(event) :
     # TODO manage cases with more than 2 events on a day
     return event.count(r"\normalsize") > 1
 
-print_year(2021)
+print_year(2022)
