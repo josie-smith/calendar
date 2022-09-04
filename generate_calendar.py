@@ -172,11 +172,13 @@ def create_events(year):
     event[(easter(year).day, easter(year).month)]           += "Easter Sunday" + end
     event[(easter(year).day+1, easter(year).month)]         += "Easter Monday" + end
     event[(25,4)]                           += "ANZAC Day" + end
-    event[(nth_day(1, 1, year, 6),6)]       += "Queen's Birthday" + end
-    event[(nth_day(3, 7, year, 6),6)]       += "UK Father's Day" + end
+    event[nth_day(2, 7, year, 5)]       += "Aus Mother's Day" + end
+    event[nth_day(1, 1, year, 6)]       += "Queen's Birthday" + end
+    event[nth_day(3, 7, year, 6)]       += "UK Father's Day" + end
     event[(24,6)]                           += "Matariki" + end         # Change this date manually every year
-    event[(nth_day(4, 1, year, 10),10)]     += "Labour Day" + end
-    event[(nth_day(2, 5, year, 11, 2),11)]  += "Canterbury" + end + "Anniversary Day" + end
+    event[nth_day(1, 7, year, 9)]       += "Aus Father's Day" + end
+    event[nth_day(4, 1, year, 10)]     += "Labour Day" + end
+    event[nth_day(2, 5, year, 11, 2)]  += "Canterbury" + end + "Anniversary Day" + end
     event[(25,12)]                          += "Christmas Day" + end
     event[(26,12)]                          += "Boxing Day" + end
 
@@ -194,7 +196,7 @@ def nth_day(n, day, year, month, following=0) :
     if month_weeks[0][following-1].month != month:
         week = month_weeks[n]
     date = week[day-1]
-    return date.day
+    return (date.day, month)
 
 def long(event) :
     # TODO manage cases with more than 2 events on a day
