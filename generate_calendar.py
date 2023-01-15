@@ -15,6 +15,37 @@ import sys
 from dateutil.easter import *
 path = os.path.abspath(os.path.dirname(sys.argv[0]))
 
+def create_events(year):
+    # initialise events
+    global event
+    event = {}
+    end = r"}\\[-5mm] \normalsize{"
+    for month in range(1, 13):
+        for day in range(1, 32):
+            event[(day,month)] = end
+
+
+    event[(1,1)]                                            += "New Year's Day" + end
+    event[(2,1)]                                            += "Day After New Year's Day" + end
+    event[(6,2)]                                            += "Waitangi Day" + end
+    event[(mothers_day(year).day, mothers_day(year).month)] += "UK Mother's Day" + end
+    event[(easter(year).day-2, easter(year).month)]         += "Good Friday" + end
+    event[(easter(year).day, easter(year).month)]           += "Easter Sunday" + end
+    event[(easter(year).day+1, easter(year).month)]         += "Easter Monday" + end
+    event[(25,4)]                                           += "ANZAC Day" + end
+    event[nth_day(2, 7, year, 5)]                           += "Aus Mother's Day" + end
+    event[nth_day(1, 1, year, 6)]                           += "Queen's Birthday" + end
+    event[nth_day(3, 7, year, 6)]                           += "UK Father's Day" + end
+    event[(14, 7)]                                          += "Matariki" + end         # Change this date manually every year
+    event[nth_day(1, 7, year, 9)]                           += "Aus Father's Day" + end
+    event[nth_day(4, 1, year, 10)]                          += "Labour Day" + end
+    event[nth_day(2, 5, year, 11, 2)]                       += "Canterbury" + end + "Anniversary Day" + end
+    event[(25,12)]                                          += "Christmas Day" + end
+    event[(26,12)]                                          += "Boxing Day" + end
+
+    # Add you own custom events here
+
+
 def print_month(year,month_number):
     """ This function generate a .tex file and print a .pdf A3
     landscape monthly clalendar Monday to Sunday using pdfLaTeX of a specific
@@ -154,36 +185,6 @@ def print_year(year,start=1,stop=12):
     os.remove(str(year)+'.log')
     os.remove(str(year)+'.tex')
 
-def create_events(year):
-    # initialise events
-    global event
-    event = {}
-    end = r"}\\[-5mm] \normalsize{"
-    for month in range(1, 13):
-        for day in range(1, 32):
-            event[(day,month)] = end
-
-
-    event[(1,1)]                            += "New Year's Day" + end
-    event[(2,1)]                            += "Day After New Year's Day" + end
-    event[(6,2)]                            += "Waitangi Day" + end
-    event[(mothers_day(year).day, mothers_day(year).month)] += "UK Mother's Day" + end
-    event[(easter(year).day-2, easter(year).month)]         += "Good Friday" + end
-    event[(easter(year).day, easter(year).month)]           += "Easter Sunday" + end
-    event[(easter(year).day+1, easter(year).month)]         += "Easter Monday" + end
-    event[(25,4)]                           += "ANZAC Day" + end
-    event[nth_day(2, 7, year, 5)]       += "Aus Mother's Day" + end
-    event[nth_day(1, 1, year, 6)]       += "Queen's Birthday" + end
-    event[nth_day(3, 7, year, 6)]       += "UK Father's Day" + end
-    event[(24,6)]                           += "Matariki" + end         # Change this date manually every year
-    event[nth_day(1, 7, year, 9)]       += "Aus Father's Day" + end
-    event[nth_day(4, 1, year, 10)]     += "Labour Day" + end
-    event[nth_day(2, 5, year, 11, 2)]  += "Canterbury" + end + "Anniversary Day" + end
-    event[(25,12)]                          += "Christmas Day" + end
-    event[(26,12)]                          += "Boxing Day" + end
-
-    # Add you own custom events here
-
 def mothers_day(year) :
     return easter(year) + datetime.timedelta(days=-21)
 
@@ -202,4 +203,4 @@ def long(event) :
     # TODO manage cases with more than 2 events on a day
     return event.count(r"\normalsize") > 1
 
-print_year(2022)
+print_year(2023)
