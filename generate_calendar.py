@@ -43,7 +43,31 @@ def create_events(year):
     event[(25,12)]                                          += "Christmas Day" + end
     event[(26,12)]                                          += "Boxing Day" + end
 
-    # Add you own custom events here
+    event[(14,4)]   += "Ross's birthday" + end
+    event[(13,1)]   += "Debbie's birthday" + end
+    event[(23,8)]   += "Danny's birthday" + end
+    event[(15,9)]   += "Kathy's birthday" + end
+    event[(5,11)]   += "Tom A's birthday" + end
+
+    event[(28,8)]   += "Josie's birthday" + end
+    event[(7,5)]    += "Mum's birthday" + end
+    event[(7,11)]   += "Ian's birthday" + end
+    event[(8,9)]    += "Mum and Ian's anniversary" + end
+    event[(29,10)]  += "Sarah's birthday" + end
+    event[(12,5)]   += "Grandma's birthday" + end
+    event[(18,11)]  += "Grandad's birthday" + end
+    event[(15,12)]  += "Clara's birthday" + end
+    event[(29,1)]   += "Chloe's birthday" + end
+    event[(3,3)]    += "Olivia's birthday" + end
+    event[(23,5)]   += "Tom C's birthday" + end
+
+    event[(26,9)]   += "Melissa's birthday" + end
+    event[(10,1)]   += "Tom G's birthday" + end
+    event[(13,10)]  += "Alana's birthday" + end
+    event[(14,2)]   += "Dion's birthday" + end
+    event[(16,3)]   += "Jessie's birthday" + end
+    event[(21,12)]  += "Alan's birthday" + end
+    event[(15,6)]   += "Jonathan's birthday" + end
 
 
 def print_month(year,month_number):
