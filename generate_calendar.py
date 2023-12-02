@@ -36,7 +36,7 @@ def create_events(year):
     event[nth_day(2, 7, year, 5)]                           += "Aus Mother's Day" + end
     event[nth_day(1, 1, year, 6)]                           += "Queen's Birthday" + end
     event[nth_day(3, 7, year, 6)]                           += "UK Father's Day" + end
-    event[(14, 7)]                                          += "Matariki" + end         # Change this date manually every year
+    event[(28, 6)]                                          += "Matariki" + end         # Change this date manually every year
     event[nth_day(1, 7, year, 9)]                           += "Aus Father's Day" + end
     event[nth_day(4, 1, year, 10)]                          += "Labour Day" + end
     event[nth_day(2, 5, year, 11, 2)]                       += "Canterbury" + end + "Anniversary Day" + end
@@ -68,6 +68,7 @@ def create_events(year):
     event[(16,3)]   += "Jessie's birthday" + end
     event[(21,12)]  += "Alan's birthday" + end
     event[(15,6)]   += "Jonathan's birthday" + end
+    event[(26,11)]   += "Carla's birthday" + end
 
 
 def print_month(year,month_number):
@@ -224,7 +225,6 @@ def nth_day(n, day, year, month, following=0) :
     return (date.day, month)
 
 def long(event) :
-    # TODO manage cases with more than 2 events on a day
     return event.count(r"\normalsize") > 1
 
-print_year(2023)
+print_year(2024)
